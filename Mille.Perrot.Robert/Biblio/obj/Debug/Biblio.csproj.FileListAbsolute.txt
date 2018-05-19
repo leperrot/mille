@@ -1,0 +1,12 @@
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\DataBase.mdf
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\DataBase_log.ldf
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\Biblio.dll.config
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\Biblio.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\Biblio.pdb
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.xml
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.csprojResolveAssemblyReference.cache
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.pdb

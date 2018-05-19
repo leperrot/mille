@@ -1,0 +1,14 @@
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\DataBase.mdf
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\DataBase_log.ldf
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\Console.exe.config
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\Console.exe
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\Console.pdb
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\Biblio.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\EntityFramework.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\Biblio.pdb
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\EntityFramework.xml
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\obj\Debug\Console.exe
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Console\obj\Debug\Console.pdb
