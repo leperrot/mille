@@ -13,7 +13,7 @@ namespace Biblio.Model
     {
         public Context() : base("name=MilleDB")
         {
-            Database.SetInitializer<Context>(new DropCreateDatabaseAlways<Context>());
+            Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

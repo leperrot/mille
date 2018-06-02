@@ -15,6 +15,10 @@ namespace Console
             try
             {
                 Context ctx = new Context();
+                ctx.Categories.Add(new Categorie { Actif = true, Libelle = "Cate1" });
+                ctx.SaveChanges();
+                ctx.Produits.Add(new Produit { Actif = true, Code = 1, Libelle = "Prod", Desc = "un produit", Prix = 2, Stock = 2, Categorie = ctx.Categories.FirstOrDefault(), CategorieId = ctx.Categories.FirstOrDefault().Id });
+                ctx.SaveChanges();
             }
             catch (Exception ex)
             {
