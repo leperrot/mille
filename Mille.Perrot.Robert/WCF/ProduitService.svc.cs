@@ -13,21 +13,10 @@ namespace WCF
 {
     public class ProduitService : IProduitService
     {
-        public List<ProduitContract> GetProduits()
+        public List<Produit> GetProduits()
         {
             Manager manager = Manager.Instance;
-            List<Produit> prods = manager.GetAllProduit();
-            List<ProduitContract> prodsContracts = new List<ProduitContract>();
-            prods.ForEach(p =>
-            {
-                Categorie cate = manager.GetCategorie(p.CategorieId);
-                prodsContracts.Add(new ProduitContract(
-                p.Id, p.Code, p.Libelle, p.Desc, p.Actif, p.Stock, p.Prix, p.CategorieId,
-                new CategorieContract(
-                    cate.Id, cate.Libelle, cate.Actif
-                )));
-            });
-            return prodsContracts;
+            return manager.GetAllProduit();
         }
 
         public int GetStock(int id)

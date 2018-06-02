@@ -97,8 +97,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContracts\CategorieContract.cs" />
-    <Compile Include="DataContracts\ProduitContract.cs" />
     <Compile Include="ProduitService.svc.cs">
       <DependentUpon>ProduitService.svc</DependentUpon>
     </Compile>

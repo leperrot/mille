@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblio.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -17,7 +18,7 @@ namespace WCF
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "produits")]
-        List<ProduitContract> GetProduits();
+        List<Produit> GetProduits();
 
         [OperationContract]
         [WebInvoke(Method = "GET",
@@ -25,6 +26,13 @@ namespace WCF
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "produits/stock?id={id}")]
         int GetStock(int id);
+
+        /*[OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            UriTemplate = "commandes")]
+        List<CommandeContract> GetCommandes();*/
     }
 
 }

@@ -87,5 +87,53 @@ namespace BusinessLayer
         }
 
         #endregion
+
+        #region Client
+
+        public List<Client> GetAllClient()
+        {
+            ClientQuery pq = new ClientQuery(ctx);
+            return pq.GetAll().ToList();
+        }
+
+        public Client GetClient(int id)
+        {
+            ClientQuery pq = new ClientQuery(ctx);
+            return pq.GetClient(id).FirstOrDefault();
+        }
+
+        #endregion
+
+        #region Commande
+
+        public List<Commande> GetAllCommande()
+        {
+            CommandeQuery pq = new CommandeQuery(ctx);
+            return pq.GetAll().ToList();
+        }
+
+        public Commande GetCommande(int id)
+        {
+            CommandeQuery pq = new CommandeQuery(ctx);
+            return pq.GetCommande(id).FirstOrDefault();
+        }
+
+        #endregion
+
+        #region Statut
+
+        public List<Statut> GetAllStatut()
+        {
+            StatutQuery pq = new StatutQuery(ctx);
+            return pq.GetAll().ToList();
+        }
+
+        public Statut GetStatut(int id)
+        {
+            StatutQuery pq = new StatutQuery(ctx);
+            return pq.GetStatut(id).FirstOrDefault();
+        }
+
+        #endregion
     }
 }
