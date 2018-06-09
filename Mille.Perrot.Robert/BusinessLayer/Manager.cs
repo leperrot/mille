@@ -35,7 +35,19 @@ namespace BusinessLayer
         public List<Produit> GetAllProduit()
         {
             ProduitQuery pq = new ProduitQuery(ctx);
-            return pq.GetAll().ToList();
+            List<Categorie> cate = GetAllCategorie();
+            List<Produit> prods = pq.GetAll().ToList();
+            prods.ForEach((p) =>
+            {
+                cate.ForEach((c) =>
+                {
+                    if(p.CategorieId == c.Id)
+                    {
+                        p.Categorie = c;
+                    }
+                });
+            });
+            return prods;
         }
 
         public Produit GetProduit(int id)
@@ -50,6 +62,12 @@ namespace BusinessLayer
                 throw e;
             }
             return p;
+        }
+
+        public List<Produit> GetProduitByLib(String lib)
+        {
+            ProduitQuery pq = new ProduitQuery(ctx);
+            return pq.GetByLibelle(lib).ToList();
         }
 
         public int AjouterProduit(Produit p)

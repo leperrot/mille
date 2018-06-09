@@ -31,5 +31,11 @@ namespace BusinessLayer.Queries
             }
             return prod;
         }
+
+        public IQueryable<Produit> GetByLibelle(String lib)
+        {
+            IQueryable<Produit> prod = _ctx.Produits.Where(p => p.Libelle == lib);
+            return prod;
+        }
     }
 }

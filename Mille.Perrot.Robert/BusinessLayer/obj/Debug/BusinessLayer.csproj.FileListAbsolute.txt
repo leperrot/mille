@@ -1,0 +1,14 @@
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\DataBase.mdf
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\DataBase_log.ldf
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\Biblio.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\Biblio.pdb
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\BusinessLayer\obj\Debug\BusinessLayer.pdb

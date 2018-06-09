@@ -1,0 +1,18 @@
+﻿@using Biblio.Model.Entities;
+@model List<Produit>
+
+<div class="container">
+    <div>
+        <h3>Liste des produits disponibles</h3>
+    </div>
+    @if (Model.Count != 0)
+    {
+        @Html.Partial("Produits", Model)
+    }
+    else
+    {
+        <div>
+            <p>Aucun produit trouvé, dsl</p>
+        </div>
+    }
+</div>

@@ -1,0 +1,32 @@
+﻿@using Biblio.Model.Entities
+@model List<Produit>
+<div>
+    <table>
+        <tr>
+            <th>Libelle</th>
+            <th>Description</th>
+            <th>Categorie</th>
+            <th>Prix</th>
+            <th>Stock</th>
+        </tr>
+        @foreach (var prod in Model.Where(p => p.Actif == true))
+        {
+            <tr class="btn-link" style="cursor: pointer;" onclick="details(@prod.Id)">
+                <td>@prod.Libelle</td>
+                <td>@prod.Desc</td>
+                <td>@prod.Categorie.Libelle</td>
+                <td>@prod.Prix</td>
+                <td>@prod.Stock</td>
+            </tr>
+        }
+    </table>
+</div>
+
+<script type="text/javascript">
+    function details(id) {
+        var url = "@Url.Action("Detail", "Produit", new { id = "__id__"})";
+        url = url.replace("__id__", id);
+        location.href = url;
+    }
+</script>
+
