@@ -4,18 +4,18 @@
 <div class="container">
     <div>
         <label for="code">Code : </label>
-        <input name="code" type="number"/>
+        <input name="code" type="number" value="@Model.Code"/>
         <label for="lib">Libelle : </label>
-        <input name="lib" type="text"/>
+        <input name="lib" type="text" value="@Model.Libelle"/>
         <label for="desc">Description : </label>
-        <input name="desc" type="text"/>
+        <input name="desc" type="text" value="@Model.Desc"/>
         <label for="actif">Actif : </label>
-        <input name="actif" type="checkbox"/>
+        <input name="actif" type="checkbox" checked="@Model.Actif"/>
         <label for="stock">Stock : </label>
-        <input name="stock" type="number"/>
+        <input name="stock" type="number" value="@Model.Stock"/>
         <label for="cate">Categorie : </label>
         <select name="cate">
-                
+            
         </select>
         <input type="button" class="btn btn-dark" value="Valider"/> 
     </div>
