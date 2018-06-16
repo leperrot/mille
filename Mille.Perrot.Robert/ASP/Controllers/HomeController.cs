@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ASP.Models;
+using Biblio.Model.Entities;
+using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +13,10 @@ namespace ASP.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<Produit> prods = Manager.Instance.GetPreferredProduits();
+            List<Commande> coms = Manager.Instance.GetLastCommandes();
+            ProdCommViewModels model = new ProdCommViewModels { Prods = prods, Comms = coms };
+            return View(model);
         }
 
         public ActionResult About()

@@ -12,5 +12,6 @@ namespace ASP.Models
     {
         public Produit Prod { get; set; }
         public IEnumerable<SelectListItem> Cate { get; set; }
+        public SelectListItem SelectedCate { get; set; }
     }
 }

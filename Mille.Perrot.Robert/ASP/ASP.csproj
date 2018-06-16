@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -209,6 +210,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProdCateViewModels.cs" />
+    <Compile Include="Models\ProdCommViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -314,8 +316,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Produit\List.cshtml" />
     <Content Include="Views\Produit\Search.cshtml" />
-    <Content Include="Views\Produit\Produits.cshtml" />
+    <Content Include="Views\Shared\Produits.cshtml" />
     <Content Include="Views\Produit\Detail.cshtml" />
+    <Content Include="Views\Produit\Ajouter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

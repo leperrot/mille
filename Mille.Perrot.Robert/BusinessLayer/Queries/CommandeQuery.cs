@@ -31,5 +31,14 @@ namespace BusinessLayer.Queries
             }
             return cli;
         }
+
+        public IQueryable<Commande> GetLastCommandes()
+        {
+            IQueryable<Commande> coms;
+            if (_ctx.Commandes.Count() >= 5)
+                coms = _ctx.Commandes.OrderBy(c => c.DateCommande).Take(5);
+            else coms = _ctx.Commandes.OrderBy(c => c.DateCommande).Take(_ctx.Commandes.Count());
+            return coms;
+        }
     }
 }

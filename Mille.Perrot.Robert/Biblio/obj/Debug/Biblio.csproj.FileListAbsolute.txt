@@ -10,3 +10,17 @@ C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFram
 C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.csprojResolveAssemblyReference.cache
 C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.dll
 C:\Users\alrobert5\Desktop\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.pdb
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\DataBase.mdf
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\DataBase_log.ldf
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\Biblio.dll.config
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\Biblio.dll
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\Biblio.pdb
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.dll
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.xml
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.csprojAssemblyReference.cache
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.csproj.CoreCompileInputs.cache
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.csproj.CopyComplete
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.dll
+C:\Users\perrotle\mille\Mille.Perrot.Robert\Biblio\obj\Debug\Biblio.pdb

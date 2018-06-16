@@ -1,0 +1,65 @@
+﻿@using ASP.Models
+@model ProdCateViewModels
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <div>
+            <fieldset>
+                <legend>Détail d'un produit</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Code)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Prod.Code)
+                    @Html.ValidationMessageFor(m => m.Prod.Code)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Libelle)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.Prod.Libelle)
+                    @Html.ValidationMessageFor(m => m.Prod.Libelle)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Desc)
+                </div>
+                <div class="editor-field">
+                    @Html.TextAreaFor(m => m.Prod.Desc)
+                    @Html.ValidationMessageFor(m => m.Prod.Desc)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Actif)
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(m => m.Prod.Actif)
+                    @Html.ValidationMessageFor(m => m.Prod.Actif)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Stock)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Prod.Stock)
+                    @Html.ValidationMessageFor(m => m.Prod.Stock)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Prix)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Prod.Prix)
+                    @Html.ValidationMessageFor(m => m.Prod.Prix)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Categorie)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(m => m.SelectedCate, Model.Cate)
+                    @Html.ValidationMessageFor(m => m.Cate)
+                </div>
+                <p>
+                    <input type="submit" class="btn btn-dark" value="Valider" />
+                </p>
+            </fieldset>
+        </div>
+    }
+</div>

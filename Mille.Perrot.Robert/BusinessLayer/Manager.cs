@@ -53,10 +53,14 @@ namespace BusinessLayer
         public Produit GetProduit(int id)
         {
             ProduitQuery pq = new ProduitQuery(ctx);
+            CategorieQuery cq = new CategorieQuery(ctx);
             Produit p;
+            Categorie c;
             try
             {
                 p = pq.GetByID(id).First();
+                c = cq.GetCategorie(p.CategorieId).First();
+                p.Categorie = c;
             }catch(Exception e)
             {
                 throw e;
@@ -67,7 +71,28 @@ namespace BusinessLayer
         public List<Produit> GetProduitByLib(String lib)
         {
             ProduitQuery pq = new ProduitQuery(ctx);
-            return pq.GetByLibelle(lib).ToList();
+            List<Categorie> cate;
+            List<Produit> prods;
+            try
+            {
+                cate = GetAllCategorie();
+                prods = pq.GetByLibelle(lib).ToList();
+                prods.ForEach((p) =>
+                {
+                    cate.ForEach((c) =>
+                    {
+                        if (p.CategorieId == c.Id)
+                        {
+                            p.Categorie = c;
+                        }
+                    });
+                });
+            }catch(Exception e)
+            {
+                throw e;
+            }
+
+            return prods;
         }
 
         public int AjouterProduit(Produit p)
@@ -86,6 +111,33 @@ namespace BusinessLayer
         {
             ProduitCommand pc = new ProduitCommand(ctx);
             pc.Supprimer(produitID);
+        }
+
+        public List<Produit> GetPreferredProduits()
+        {
+            ProduitQuery pc = new ProduitQuery(ctx);
+            List<Categorie> cate;
+            List<Produit> prods;
+            try
+            {
+                cate = GetAllCategorie();
+                prods = pc.GetPref().ToList();
+                prods.ForEach((p) =>
+                {
+                    cate.ForEach((c) =>
+                    {
+                        if (p.CategorieId == c.Id)
+                        {
+                            p.Categorie = c;
+                        }
+                    });
+                });
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return prods;
         }
 
         #endregion
@@ -134,6 +186,12 @@ namespace BusinessLayer
         {
             CommandeQuery pq = new CommandeQuery(ctx);
             return pq.GetCommande(id).FirstOrDefault();
+        }
+
+        public List<Commande> GetLastCommandes()
+        {
+            CommandeQuery cp = new CommandeQuery(ctx);
+            return cp.GetLastCommandes().ToList();
         }
 
         #endregion

@@ -25,7 +25,7 @@ namespace BusinessLayer.Commands
 
         public void Modifier(Produit prd)
         {
-            Produit upPrd = _ctx.Produits.Where(p => p.Id == p.Id).FirstOrDefault();
+            Produit upPrd = _ctx.Produits.Where(p => p.Id == prd.Id).FirstOrDefault();
             if (upPrd != null)
             {
                 upPrd.Id = prd.Id;

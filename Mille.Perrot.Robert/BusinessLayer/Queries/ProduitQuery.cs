@@ -37,5 +37,14 @@ namespace BusinessLayer.Queries
             IQueryable<Produit> prod = _ctx.Produits.Where(p => p.Libelle == lib);
             return prod;
         }
+
+        public IQueryable<Produit> GetPref()
+        {
+            IQueryable<Produit> prods;
+            if (_ctx.Produits.Count() >= 5)
+                prods = _ctx.Produits.Take(5);
+            else prods = _ctx.Produits.Take(_ctx.Produits.Count());
+            return prods;
+        }
     }
 }
