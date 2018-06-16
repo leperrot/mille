@@ -1,22 +1,53 @@
-﻿@using Biblio.Model.Entities
-@model Produit
+﻿@using ASP.Models
+@model ProdCateViewModels
 
 <div class="container">
-    <div>
-        <label for="code">Code : </label>
-        <input name="code" type="number" value="@Model.Code"/>
-        <label for="lib">Libelle : </label>
-        <input name="lib" type="text" value="@Model.Libelle"/>
-        <label for="desc">Description : </label>
-        <input name="desc" type="text" value="@Model.Desc"/>
-        <label for="actif">Actif : </label>
-        <input name="actif" type="checkbox" checked="@Model.Actif"/>
-        <label for="stock">Stock : </label>
-        <input name="stock" type="number" value="@Model.Stock"/>
-        <label for="cate">Categorie : </label>
-        <select name="cate">
-            
-        </select>
-        <input type="button" class="btn btn-dark" value="Valider"/> 
-    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "T'es nul")
+        <div>
+            <fieldset>
+                <legend>Détail d'un produit</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Code)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Prod.Code)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Libelle)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.Prod.Libelle)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Desc)
+                </div>
+                <div class="editor-field">
+                    @Html.TextAreaFor(m => m.Prod.Desc)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Actif)
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(m => m.Prod.Actif)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod.Stock)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Prod.Stock)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Prod)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(m => m.Prod.Categorie, Model.Cate)
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-dark" value="Valider" />
+                </div>
+            </fieldset>
+        </div>
+    }
 </div>

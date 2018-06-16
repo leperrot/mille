@@ -37,7 +37,6 @@ namespace BusinessLayer.Commands
                 upPrd.Stock = prd.Stock;
                 upPrd.CategorieId = prd.CategorieId;
                 upPrd.Categorie = prd.Categorie;
-
             }
             _ctx.SaveChanges();
         }
