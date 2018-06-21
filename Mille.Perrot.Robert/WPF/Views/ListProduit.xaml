@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="WPF.Views.ListProduit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Column="0" Grid.Row="0" Text="Filter"></TextBox>
+
+        <ListView Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{Binding Produits, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedProduit, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Code" DisplayMemberBinding="{Binding Code}"/>
+                    <GridViewColumn Header="Libelle" DisplayMemberBinding="{Binding Libelle}"/>
+                    <GridViewColumn Header="Stock" DisplayMemberBinding="{Binding Stock}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <local:DetailProduit Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="3" DataContext="{Binding SelectedProduit, UpdateSourceTrigger=PropertyChanged}"></local:DetailProduit>
+    </Grid>
+</UserControl>
