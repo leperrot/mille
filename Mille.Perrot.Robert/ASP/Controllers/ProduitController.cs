@@ -46,18 +46,18 @@ namespace ASP.Controllers
         }
 
         [HttpPost]
-        public ActionResult Detail(ProdCateViewModels m)
+        public ActionResult Modif(ProdCateViewModels m)
         {
             if (ModelState.IsValid)
             {
-                string cId = m.Cate.SingleOrDefault(s => s.Selected == true).Value;
-                Categorie c = Manager.Instance.GetCategorie(int.Parse(m.Cate.SingleOrDefault(s => s.Selected == true).Value));
+                string cId = m.SelectedCate.Value;
+                Categorie c = Manager.Instance.GetCategorie(int.Parse(cId));
                 m.Prod.Categorie = c;
                 m.Prod.CategorieId = c.Id;
                 Manager.Instance.ModifierProduit(m.Prod);
-                return View("List");
+                return View("List", Manager.Instance.GetAllProduit());
             }
-            return View(m.Prod.Id);
+            return View("Detail", m.Prod.Id);
         }
 
         public ActionResult Ajouter()
@@ -65,6 +65,7 @@ namespace ASP.Controllers
             Produit prod = new Produit();
             List<Categorie> cate = Manager.Instance.GetAllCategorie();
             List<SelectListItem> list = new List<SelectListItem>();
+            SelectListItem sel = new SelectListItem();
             foreach (Categorie c in cate)
             {
                 list.Add(new SelectListItem()
@@ -74,23 +75,25 @@ namespace ASP.Controllers
                     Selected = false
                 });
             }
-            ProdCateViewModels model = new ProdCateViewModels { Prod = prod, Cate = list, SelectedCate = new SelectListItem() };
+            list.ElementAt(0).Selected = true;
+            sel = list.ElementAt(0);
+            ProdCateViewModels model = new ProdCateViewModels { Prod = prod, Cate = list, SelectedCate = sel };
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Ajouter(ProdCateViewModels m)
+        public ActionResult Add(ProdCateViewModels m)
         {
             if (ModelState.IsValid)
             {
-                string cId = m.Cate.SingleOrDefault(s => s.Selected == true).Value;
-                Categorie c = Manager.Instance.GetCategorie(int.Parse(m.Cate.SingleOrDefault(s => s.Selected == true).Value));
+                string cId = m.SelectedCate.Value;
+                Categorie c = Manager.Instance.GetCategorie(int.Parse(cId));
                 m.Prod.Categorie = c;
                 m.Prod.CategorieId = c.Id;
                 Manager.Instance.AjouterProduit(m.Prod);
-                return View("List");
+                return View("List", Manager.Instance.GetAllProduit());
             }
-            return View(m.Prod.Id);
+            return View("Detail", m.Prod.Id);
         }
     }
 }

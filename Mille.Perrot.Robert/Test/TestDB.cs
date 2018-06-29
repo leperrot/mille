@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Biblio.Model;
 using Biblio.Model.Entities;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -49,8 +50,9 @@ namespace Test
             ctx.Categories.Add(new Categorie { Libelle = "Cat 1", Actif = true });
             ctx.Categories.Add(new Categorie { Libelle = "Cat 2", Actif = true });
             ctx.SaveChanges();
-            //Assert.IsInstanceOfType(ctx.Categories.ToList(), Type.GetType("System.Collections.Generic.List"));
-            Assert.AreEqual(ctx.Categories.ToList().Count(), 2);
+            List<Categorie> l = ctx.Categories.ToList();
+            //Assert.IsInstanceOfType(l, Type.GetType("System.Collections.Generic.List"));
+            Assert.AreEqual(l.Count(), 2);
         }
     }
 }

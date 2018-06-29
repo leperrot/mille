@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -13,9 +14,11 @@ namespace Biblio.Model.Entities
         [DataMember]
         public int Id { get; set; }
 
+        [Required]
         [DataMember]
         public long Code { get; set; }
 
+        [Required]
         [DataMember]
         public String Libelle { get; set; }
 
@@ -25,9 +28,11 @@ namespace Biblio.Model.Entities
         [DataMember]
         public Boolean Actif { get; set; }
 
+        [Required]
         [DataMember]
         public int Stock { get; set; }
 
+        [Required]
         [DataMember]
         public double Prix { get; set; }
 

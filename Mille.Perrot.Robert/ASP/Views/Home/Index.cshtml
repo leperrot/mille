@@ -2,30 +2,46 @@
 @model ProdCommViewModels
 
 <div>
-    <div>
-        <h3>Liste des produits les plus populaires</h3>
+    <div class="boxes">
+        <div>
+            <h3>Liste des produits les plus populaires</h3>
+        </div>
+        @Html.Partial("Produits", Model.Prods)
+        <div>
+            <input type="button" class="btn btn-dark but" value="Voir plus" id="list" />
+        </div>
     </div>
-    @Html.Partial("Produits", Model.Prods)
-    <div>
-        <h3>Liste des commandes passées récemment</h3>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <th>Client</th>
-                <th>Date Commande</th>
-                <th>Statut</th>
-                <th>Observation</th>
-            </tr>
-            @foreach (var com in Model.Comms)
-            {
+    <div class="boxes">
+        <div>
+            <h3>Liste des commandes passées récemment</h3>
+        </div>
+        <div>
+            <table>
                 <tr>
-                    <td>@com.Client.Nom @com.Client.Prenom</td>
-                    <td>@com.DateCommande</td>
-                    <td>@com.Statut.Libelle</td>
-                    <td>@com.Observation</td>
+                    <th>Client</th>
+                    <th>Date Commande</th>
+                    <th>Statut</th>
+                    <th>Observation</th>
                 </tr>
-            }
-        </table>
+                @foreach (var com in Model.Comms)
+                {
+                    <tr>
+                        <td>@com.Client.Nom @com.Client.Prenom</td>
+                        <td>@com.DateCommande</td>
+                        <td>@com.Statut.Libelle</td>
+                        <td>@com.Observation</td>
+                    </tr>
+                }
+            </table>
+        </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(() => {
+        $("#list").click(() => {
+            var url = "@Url.Action("List", "Produit")";
+            location.href = url;
+        });
+    });
+</script>

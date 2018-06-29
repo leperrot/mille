@@ -14,6 +14,7 @@ namespace Biblio.Model
         public Context() : base("name=MilleDB")
         {
             Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());
+            //Database.SetInitializer<Context>(new DropCreateDatabaseAlways<Context>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

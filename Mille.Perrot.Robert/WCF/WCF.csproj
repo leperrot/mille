@@ -22,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +90,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CommandeService.svc" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="ProduitService.svc" />
@@ -97,6 +99,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICommandeService.cs" />
+    <Compile Include="CommandeService.svc.cs">
+      <DependentUpon>CommandeService.svc</DependentUpon>
+    </Compile>
     <Compile Include="ProduitService.svc.cs">
       <DependentUpon>ProduitService.svc</DependentUpon>
     </Compile>

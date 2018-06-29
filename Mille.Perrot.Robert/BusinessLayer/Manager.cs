@@ -35,17 +35,11 @@ namespace BusinessLayer
         public List<Produit> GetAllProduit()
         {
             ProduitQuery pq = new ProduitQuery(ctx);
-            List<Categorie> cate = GetAllCategorie();
+            CategorieQuery cq = new CategorieQuery(ctx);
             List<Produit> prods = pq.GetAll().ToList();
             prods.ForEach((p) =>
             {
-                cate.ForEach((c) =>
-                {
-                    if(p.CategorieId == c.Id)
-                    {
-                        p.Categorie = c;
-                    }
-                });
+                p.Categorie = cq.GetCategorie(p.CategorieId).FirstOrDefault();
             });
             return prods;
         }
@@ -71,21 +65,14 @@ namespace BusinessLayer
         public List<Produit> GetProduitByLib(String lib)
         {
             ProduitQuery pq = new ProduitQuery(ctx);
-            List<Categorie> cate;
+            CategorieQuery cq = new CategorieQuery(ctx);
             List<Produit> prods;
             try
             {
-                cate = GetAllCategorie();
                 prods = pq.GetByLibelle(lib).ToList();
                 prods.ForEach((p) =>
                 {
-                    cate.ForEach((c) =>
-                    {
-                        if (p.CategorieId == c.Id)
-                        {
-                            p.Categorie = c;
-                        }
-                    });
+                    p.Categorie = cq.GetCategorie(p.CategorieId).FirstOrDefault();
                 });
             }catch(Exception e)
             {
@@ -116,21 +103,14 @@ namespace BusinessLayer
         public List<Produit> GetPreferredProduits()
         {
             ProduitQuery pc = new ProduitQuery(ctx);
-            List<Categorie> cate;
+            CategorieQuery cq = new CategorieQuery(ctx);
             List<Produit> prods;
             try
             {
-                cate = GetAllCategorie();
                 prods = pc.GetPref().ToList();
                 prods.ForEach((p) =>
                 {
-                    cate.ForEach((c) =>
-                    {
-                        if (p.CategorieId == c.Id)
-                        {
-                            p.Categorie = c;
-                        }
-                    });
+                    p.Categorie = cq.GetCategorie(p.CategorieId).FirstOrDefault();
                 });
             }
             catch (Exception e)
@@ -179,19 +159,40 @@ namespace BusinessLayer
         public List<Commande> GetAllCommande()
         {
             CommandeQuery pq = new CommandeQuery(ctx);
-            return pq.GetAll().ToList();
+            ClientQuery cq = new ClientQuery(ctx);
+            StatutQuery sq = new StatutQuery(ctx);
+            List<Commande> coms = pq.GetAll().ToList();
+            coms.ForEach(elem =>
+            {
+                elem.Statut = sq.GetStatut(elem.StatutId).FirstOrDefault();
+                elem.Client = cq.GetClient(elem.ClientId).FirstOrDefault();
+            });
+            return coms;
         }
 
         public Commande GetCommande(int id)
         {
             CommandeQuery pq = new CommandeQuery(ctx);
-            return pq.GetCommande(id).FirstOrDefault();
+            ClientQuery cq = new ClientQuery(ctx);
+            StatutQuery sq = new StatutQuery(ctx);
+            Commande c = pq.GetCommande(id).FirstOrDefault();
+            c.Statut = sq.GetStatut(c.StatutId).FirstOrDefault();
+            c.Client = cq.GetClient(c.ClientId).FirstOrDefault();
+            return c;
         }
 
         public List<Commande> GetLastCommandes()
         {
             CommandeQuery cp = new CommandeQuery(ctx);
-            return cp.GetLastCommandes().ToList();
+            ClientQuery cq = new ClientQuery(ctx);
+            StatutQuery sq = new StatutQuery(ctx);
+            List<Commande> coms = cp.GetLastCommandes().ToList();
+            coms.ForEach(elem =>
+            {
+                elem.Statut = sq.GetStatut(elem.StatutId).FirstOrDefault();
+                elem.Client = cq.GetClient(elem.ClientId).FirstOrDefault();
+            });
+            return coms;
         }
 
         #endregion

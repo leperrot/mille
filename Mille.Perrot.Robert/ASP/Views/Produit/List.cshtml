@@ -2,15 +2,20 @@
 @model List<Produit>
 
 <div>
-    <div>
+    <div class="boxes">
         <label for="search">Recherche par nom : </label>
         <input type="text" name="search" id="search" />
         <input type="button" class="btn btn-dark" value="Rechercher" id="research" />
     </div>
-    <div>
-        <h3>Liste des produits disponibles</h3>
+    <div class="boxes">
+        <input type="button" class="btn btn-dark" value="Nouveau Produit" id="add"/>
     </div>
-    @Html.Partial("Produits", Model)
+    <div class="boxes">
+        <div>
+            <h3>Liste des produits disponibles</h3>
+        </div>
+        @Html.Partial("Produits", Model)
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -19,6 +24,10 @@
             var url = "@Url.Action("Search", "Produit", new { libelle = "__libelle__"})";
             url = url.replace("__libelle__", $("#search").val());
             location.href = url;
-        })
-    })
+        });
+        $("#add").click(() => {
+            var url = "@Url.Action("Ajouter", "Produit")";
+            location.href = url;
+        });
+    });
 </script>
