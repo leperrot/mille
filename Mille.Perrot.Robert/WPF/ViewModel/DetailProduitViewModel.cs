@@ -16,7 +16,14 @@ namespace WPF.ViewModel
         #region Variables
 
         private Produit _produit;
+        private Boolean _pop;
+        public Boolean Pop
+        {
+            get { return this._pop; }
+            set { this._pop = value; }
+        }
         private RelayCommand _modify;
+        private RelayCommand _stock;
 
         #endregion
 
@@ -25,6 +32,7 @@ namespace WPF.ViewModel
         public DetailProduitViewModel(Produit p)
         {
             this._produit = p;
+            this._pop = false;
         }
 
         #endregion
@@ -65,22 +73,36 @@ namespace WPF.ViewModel
 
         #region Commandes
 
-        /*public ICommand AddOperation
+        public ICommand Modify
         {
             get
             {
-                if (_add == null)
-                    _add = new RelayCommand(() => this.ShowWindowOperation());
-                return _add;
+                if (_modify == null)
+                    _modify = new RelayCommand(() => this.ModifyOperation());
+                return _modify;
             }
         }
-        
-        public void ShowWindowOperation()
+
+        public void ModifyOperation()
         {
-            Views.Operation operationWindow = new Views.Operation();
-            operationWindow.DataContext = this;
-            operationWindow.ShowDialog();
-        }*/
+            this._pop = false;
+            Manager.Instance.ModifierProduit(this._produit);
+        }
+
+        public ICommand ViewStock
+        {
+            get
+            {
+                if (_stock == null)
+                    _stock = new RelayCommand(() => this.StockOperation());
+                return _stock;
+            }
+        }
+
+        public void StockOperation()
+        {
+            this._pop = true;
+        }
 
         #endregion
     }

@@ -34,7 +34,7 @@ namespace BusinessLayer.Queries
 
         public IQueryable<Produit> GetByLibelle(String lib)
         {
-            IQueryable<Produit> prod = _ctx.Produits.Where(p => p.Libelle == lib);
+            IQueryable<Produit> prod = _ctx.Produits.Where(p => p.Libelle.Contains(lib));
             return prod;
         }
 

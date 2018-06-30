@@ -37,6 +37,11 @@
             <Label Grid.Row="2" Grid.Column="0">Prix</Label>
             <TextBox Margin="10" Width="150" Grid.Row="2" Grid.Column="1" Text="{Binding Prix}"></TextBox>
             <Button Margin="10" Width="150"  Grid.Row="3" Grid.Column="0" Command="{Binding StockOperation}" >Valeur du stock</Button>
+            <Popup IsOpen="{Binding Pop}" StaysOpen="True">
+                <StackPanel>
+                    <TextBox Margin="10" Width="150" Text="{Binding Stock}"></TextBox>
+                </StackPanel>
+            </Popup>
         </Grid>
 
         <Button Height="40" Grid.Column="3" Margin="10" Grid.Row="2" Command="{Binding ModifyOperation}">Modify</Button>
